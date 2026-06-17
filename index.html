@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sachid G Krishnan — Portfolio</title>
+<style>
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+html,body{width:100%;overflow-x:hidden;background:#ffffff;font-family:'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+body,main,.case-study-deck,.project{overflow-x:hidden;}
+img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
+
+/* HERO */
+.hero{width:100%;margin:0;padding:0;line-height:0;}
+.hero img{width:100%;height:auto;object-fit:contain;}
+.hero-desktop{display:block;}.hero-mobile{display:none;}
+@media(max-width:768px){.hero-desktop{display:none;}.hero-mobile{display:block;}}
+
+/* NAV */
+#nav-wrapper{position:relative;width:100%;line-height:0;z-index:999;}
+.portfolio-nav{width:100%;display:block;line-height:0;background:#ffffff;position:relative;}
+.portfolio-nav.is-sticky{position:fixed;top:0;left:0;width:100%;z-index:999;}
+.nav-toggle-img{width:100%;height:auto;display:block;object-fit:contain;cursor:pointer;}
+.nav-toggle-img:focus-visible{outline:3px solid #b6ff3c;outline-offset:-3px;}
+
+/* OVERLAY HIT BUTTONS */
+.menu-hitbox{
+  display:none;position:absolute;left:36%;width:64%;
+  background:transparent;border:none;cursor:pointer;
+  z-index:9999;padding:0;margin:0;outline:none;
+  -webkit-tap-highlight-color:transparent;
+}
+#hit-smc{top:39%;height:28%;}
+#hit-gd{top:67%;height:28%;}
+#nav-wrapper.menu-is-open .menu-hitbox{display:block;}
+
+/* FLOATING UTILITY BUTTON SYSTEM */
+#home-btn{
+  position:fixed;bottom:30px;right:30px;z-index:1000;
+  width:64px;height:64px;cursor:pointer;
+  opacity:0;pointer-events:none;
+  transition:opacity .45s ease,transform .35s ease;
+  transform:translateY(10px);display:block;
+  text-decoration:none;border-radius:50%;
+}
+#home-btn img{width:100%;height:100%;display:block;}
+#home-btn.is-visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+#home-btn:hover{opacity:.85;}
+
+/* New floating contact icon positioned top-right parallel to home button */
+#contact-floating-btn {
+  position:fixed;top:30px;right:30px;z-index:1000;
+  width:64px;height:64px;cursor:pointer;
+  opacity:0;pointer-events:none;
+  transition:opacity .45s ease,transform .35s ease;
+  transform:translateY(-10px);display:block;
+  text-decoration:none;border-radius:50%;
+}
+#contact-floating-btn img{width:100%;height:100%;display:block;}
+#contact-floating-btn.is-visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+#contact-floating-btn:hover{opacity:.85;}
+
+/* CASE STUDY */
+.case-study-deck{width:100%;overflow-x:hidden;}
+.project{overflow-x:hidden;}
+
+/* VISIBILITY STATES */
+#social-media-creations{background:#cccccc;display:none !important;}
+#social-media-creations.is-active{display:block !important;}
+#wealth-pilot-creations{background:#bdaf9c;display:none !important;}
+#wealth-pilot-creations.is-active{display:block !important;}
+#graphic-designs{background:#ffffff;display:none !important;}
+#graphic-designs.is-active{display:block !important;}
+
+/* BRAND BRIEF */
+.brand-brief{width:100%;background:#000000;padding:14px 7vw 16px;}
+.brand-brief__inner{max-width:1400px;margin:0 auto;}
+.brief-name{font-size:clamp(18px,1.6vw,28px);font-weight:700;color:#ffffff;letter-spacing:.04em;text-transform:uppercase;line-height:1.1;margin-bottom:3px;}
+.brief-tagline{font-family:"Courier New",monospace;font-size:9px;font-weight:700;color:#555555;text-transform:uppercase;letter-spacing:.2em;margin-bottom:10px;}
+.brief-body{max-width:900px;color:#888888;font-size:11.5px;line-height:1.45;letter-spacing:.015em;margin-bottom:12px;}
+.brief-row{display:grid;grid-template-columns:200px 1fr;gap:12px;padding:5px 0;border-top:1px solid rgba(255,255,255,.07);align-items:baseline;}
+.brief-row:last-child{border-bottom:1px solid rgba(255,255,255,.07);}
+.brief-row__label{font-family:"Courier New",monospace;font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#ffffff;white-space:nowrap;}
+.brief-row__value{font-size:11.5px;line-height:1.45;letter-spacing:.015em;color:#888888;font-weight:400;}
+
+/* CONTENT COLUMN */
+.project-column{width:85%;max-width:1200px;margin:0 auto;}
+
+/* SECTION LABELS - FURNITURE */
+.section-label{padding:60px 0 20px;}
+.section-label__eyebrow{
+  font-size:9px;font-weight:700;letter-spacing:.28em;
+  text-transform:uppercase;margin-bottom:7px;
+  color:#555555;
+}
+.section-label__title{
+  font-size:clamp(11px,1.1vw,14px);font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;line-height:1.3;
+  color:#333333;
+}
+.section-label__subtitle{
+  font-size:clamp(9px,.8vw,11px);font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;margin-top:4px;
+  color:#555555;
+}
+
+/* POSTS */
+.post-block{width:100%;padding-bottom:48px;}
+.post-block img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 6px 28px rgba(0,0,0,.09);}
+.post-block--80{width:80%;margin:0 auto;padding-bottom:48px;}
+.post-block--80 img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 6px 28px rgba(0,0,0,.09);}
+
+/* Custom spacing override for graphic design section items */
+#graphic-designs .post-block {padding-bottom:10px;}
+
+/* VIDEO ENGINE */
+.video-post-wrap{
+  position:relative;
+  display:block;
+  width:100%;
+  line-height:0;
+}
+.video-post-wrap img.post-bg{
+  position:relative;
+  z-index:2;
+  pointer-events:none;
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:3px;
+  box-shadow:0 6px 28px rgba(0,0,0,.09);
+}
+.video-screen-clip{
+  position:absolute;
+  top:33%;
+  left:31%;
+  width:37%;
+  height:46%;
+  overflow:hidden;
+  z-index:3;
+  border-radius:10px;
+}
+.video-screen-clip video{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  z-index:1;
+  display:block;
+}
+.video-play-btn{
+  position:absolute;
+  top:50%;
+  left:49%;
+  transform:translate(-50%,-50%);
+  z-index:10;
+  width:56px;
+  height:56px;
+  cursor:pointer;
+  transition:opacity .3s ease;
+  pointer-events:auto;
+}
+.video-play-btn img{width:100%;height:100%;display:block;}
+.video-play-btn.is-hidden{opacity:0;pointer-events:none;}
+
+/* BI-DIRECTIONAL REVEAL */
+.reveal,.reveal-left,.reveal-right{opacity:0;transition:opacity .65s ease,transform .65s ease;}
+.reveal{transform:translateY(28px);}
+.reveal-left{transform:translateX(-48px);}
+.reveal-right{transform:translateX(48px);}
+.reveal.is-visible,.reveal-left.is-visible,.reveal-right.is-visible{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-right{opacity:1;transform:none;transition:none;}}
+
+/* ====================================
+   HEALTHCARE SEPARATE CONTAINER ENGINE
+==================================== */
+.healthcare-deck-wrap {
+  width:100%;
+  background:#9966cc;
+  padding-top:60px;
+  padding-bottom:100px;
+}
+.hc-brief {
+  width:100%;
+  background:#000000;
+  line-height:0;
+}
+.hc-brief img {
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* White labels for healthcare section readability */
+.hc-label {padding:60px 0 20px;}
+.hc-label__eyebrow {
+  font-size:9px;font-weight:700;letter-spacing:.28em;
+  text-transform:uppercase;margin-bottom:7px;
+  color:rgba(255, 255, 255, 0.7);
+}
+.hc-label__title {
+  font-size:clamp(11px,1.1vw,14px);font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;line-height:1.3;
+  color:#ffffff;
+}
+
+/* ====================================
+   WEALTH PILOT SEPARATE CONTAINER ENGINE
+==================================== */
+.wp-label {padding:60px 0 20px;}
+.wp-label__eyebrow {
+  font-size:9px;font-weight:700;letter-spacing:.28em;
+  text-transform:uppercase;margin-bottom:7px;
+  color:rgba(255, 255, 255, 0.7);
+}
+.wp-label__title {
+  font-size:clamp(11px,1.1vw,14px);font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;line-height:1.3;
+  color:#ffffff;
+}
+
+/* ====================================
+   PRINT MATERIALS SEPARATE CONTAINER ENGINE
+==================================== */
+.print-materials-deck-wrap {
+  width:100%;
+  background:#000000;
+  padding-bottom:0;
+}
+.pm-main-banner {
+  width:100%;
+  line-height:0;
+}
+.pm-main-banner img {
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* ====================================
+   AI FILM EXPERIMENTS CARDS ENGINE
+==================================== */
+.ai-cards-container {
+  padding: 40px 0 100px;
+}
+.ai-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+.ai-card {
+  background: #fcfcfc;
+  border: 1px solid #eaeaea;
+  padding: 32px 26px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.015);
+}
+.ai-card Dino {
+  display:none;
+}
+.ai-card:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.09);
+}
+.ai-card__tag {
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888888;
+  margin-bottom: 14px;
+  transition: color 0.35s ease;
+}
+.ai-card:hover .ai-card__tag {
+  color: #b6ff3c; 
+}
+.ai-card__title {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.ai-card__desc {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.55;
+  margin-bottom: 24px;
+  transition: color 0.35s ease;
+}
+.ai-card:hover .ai-card__desc {
+  color: #b0b0b0;
+}
+.ai-card__action {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  color: #1a1a1a;
+  transition: color 0.35s ease;
+  margin-top: auto;
+}
+.ai-card:hover .ai-card__action {
+  color: #b6ff3c;
+}
+
+/* ====================================
+   GLOBAL CONTACT FOOTER STYLING
+==================================== */
+.portfolio-footer {
+  width: 100%;
+  background: #000000;
+  padding: 45px 7vw 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.portfolio-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+@media (min-width: 768px) {
+  .portfolio-footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.footer-heading h2 {
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.footer-heading p {
+  font-size: 12.5px;
+  color: #666666;
+  max-width: 320px;
+  line-height: 1.45;
+}
+.footer-directory {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 20px 40px;
+}
+.footer-node {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-node__label {
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #99ff00;
+}
+.footer-node__value {
+  font-size: clamp(13px, 1.1vw, 15px);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  word-break: break-all;
+}
+.footer-node__value:hover:not(.is-disabled) {
+  color: #b6ff3c;
+}
+.footer-node__value.is-disabled {
+  color: #262626;
+  cursor: not-allowed;
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="home-hero">
+  <img class="hero-desktop" src="assets/global/home-desktop.png"
+       alt="Sachid G Krishnan — Multidisciplinary Creative. Social Media Visual Creator and Senior Graphic Designer.">
+  <img class="hero-mobile" src="assets/global/home-mobile.png"
+       alt="Sachid G Krishnan — Multidisciplinary Creative. Social Media Visual Creator and Senior Graphic Designer.">
+</header>
+
+<div id="nav-wrapper">
+  <nav class="portfolio-nav" id="portfolioNav">
+    <img id="portfolioNavImg" class="nav-toggle-img"
+         src="assets/global/PortfolioMenu_Desktop.png"
+         alt="Portfolio menu, closed. Click to open."
+         role="button" tabindex="0" aria-expanded="false">
+    <button class="menu-hitbox" id="hit-smc" aria-label="Open Social Media Creations" tabindex="0"></button>
+    <button class="menu-hitbox" id="hit-gd"  aria-label="Open Graphic Designs"         tabindex="0"></button>
+  </nav>
+</div>
+
+<a id="home-btn" href="#" role="button" aria-label="Return to home">
+  <img src="assets/global/HomeButton.png" alt="Home">
+</a>
+
+<!-- Floating Contact Icon Element mapped to grab global path asset directory -->
+<a id="contact-floating-btn" href="#portfolio-footer" role="button" aria-label="Scroll straight to contact information">
+  <img src="assets/global/PhoneIcon.png" alt="Contact Phone">
+</a>
+
+<main class="case-study-deck" id="caseDeck">
+
+  <section class="project" id="social-media-creations">
+
+      <div id="social-media-banner" style="width:100%;line-height:0;">
+        <img src="assets/global/Social_media-Banner.png"
+             alt="Social Media Creatives"
+             style="width:100%;height:auto;display:block;">
+      </div>
+
+    <div style="padding-bottom: 100px;"> <div class="brand-brief">
+        <div class="brand-brief__inner">
+          <h2 class="brief-name">Naomi Home Modular Cloud Couch</h2>
+          <p class="brief-tagline">Furniture &amp; Home Living</p>
+          <p class="brief-body">
+            A social media campaign created to showcase the product's versatility,
+            comfort, and modern lifestyle appeal — demonstrating how a single modular
+            sofa adapts to different living needs while maintaining a premium brand
+            presence across digital platforms.
+          </p>
+          <div class="brief-row">
+            <span class="brief-row__label">BRAND NAME</span>
+            <span class="brief-row__value">Naomi Home Modular Cloud Couch</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-row__label">CAMPAIGN GOAL</span>
+            <span class="brief-row__value">Increase product awareness, showcase modular flexibility, and drive engagement through visually compelling lifestyle storytelling.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-row__label">TARGET AUDIENCE</span>
+            <span class="brief-row__value">Homeowners, apartment residents, young professionals, couples, families, and online shoppers in the US market.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-row__label">OBJECTIVE</span>
+            <span class="brief-row__value">Premium, modern, comfortable, flexible, and easy-to-live-with product positioning.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-row__label">BRAND MOOD</span>
+            <span class="brief-row__value">Cozy &nbsp;·&nbsp; Contemporary &nbsp;·&nbsp; Premium &nbsp;·&nbsp; Flexible</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-column">
+        <div class="section-label reveal">
+          <p class="section-label__eyebrow">Campaign Thinking</p>
+        </div>
+        <div class="post-block reveal-left">
+          <img src="assets/furniture/Campaign Thinking.png" alt="Campaign Thinking">
+        </div>
+
+        <div class="section-label reveal">
+          <p class="section-label__eyebrow">Website Hero Banner</p>
+          <p class="section-label__title">Option 1 &amp; Option 2</p>
+        </div>
+        <div class="post-block reveal-left">
+          <img src="assets/furniture/Furni_post01.png" alt="Naomi Home Hero Banner Option 1">
+        </div>
+        <div class="post-block reveal-right">
+          <img src="assets/furniture/Furni_post02.png" alt="Naomi Home Hero Banner Option 2">
+        </div>
+
+        <div class="section-label reveal">
+          <p class="section-label__eyebrow">Mood Boards</p>
+          <p class="section-label__title">Concept Visual For Campaign Framework</p>
+        </div>
+        <div class="post-block reveal-left">
+          <img src="assets/furniture/Furni_post03.png" alt="Campaign Mood Board">
+        </div>
+
+        <div class="section-label reveal">
+          <p class="section-label__eyebrow">Instagram Carousel</p>
+          <p class="section-label__title">Product Flexibility · Comfort · Lifestyle</p>
+        </div>
+        <div class="post-block reveal-right">
+          <img src="assets/furniture/Furni_post04.png" alt="Instagram Carousel">
+        </div>
+
+        <div class="section-label reveal">
+          <p class="section-label__eyebrow">Social Media Ad (FB / Instagram)</p>
+          <p class="section-label__title">High Conversion Ad Creative</p>
+          <p class="section-label__subtitle">Focused On Engagement &amp; Clicks</p>
+        </div>
+        <div class="post-block--80 reveal-left">
+          <img src="assets/furniture/Furni_post05.png" alt="Facebook Ad Creative">
+        </div>
+        <div class="post-block reveal-right">
+          <img src="assets/furniture/Furni_post06.png" alt="Instagram Ad Creative">
+        </div>
+
+        <div class="section-label reveal">
+          <p class="section-label__eyebrow">Video Post</p>
+          <p class="section-label__title">15 Second Promotional Video</p>
+        </div>
+
+        <div class="post-block--80 reveal-left">
+          <div class="video-post-wrap" id="videoPostWrap">
+            <img class="post-bg" src="assets/furniture/Furni_post07.png" alt="Promotional Video Post Mockup">
+            <div class="video-screen-clip" id="videoScreen">
+              <video id="promoVideo" playsinline preload="metadata" muted>
+                <source src="assets/furniture/Furni_video.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="video-play-btn" id="videoPlayBtn" role="button" aria-label="Play video">
+              <img src="assets/furniture/play-button.png" alt="Play">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="healthcare-deck-wrap">
+      
+      <div class="hc-brief">
+        <img src="assets/healthcare/Health-order01.png" alt="MindSpace Campaign Vision and Brief">
+      </div>
+
+      <div class="project-column">
+        <div class="hc-label reveal">
+          <p class="hc-label__eyebrow">Campaign Vision</p>
+          <p class="hc-label__title">Hand holding tablet / Campaign manifesto / Premium spacing</p>
+        </div>
+        <div class="post-block reveal-left">
+          <img src="assets/healthcare/Health-order02.png" alt="MindSpace Awareness Creative Series">
+        </div>
+
+        <div class="hc-label reveal">
+          <p class="hc-label__eyebrow">Awareness Creative Series</p>
+          <p class="hc-label__title">3 floating Instagram post mockups / Dynamic composition</p>
+        </div>
+        <div class="post-block reveal-right">
+          <img src="assets/healthcare/Health-order03.png" alt="MindSpace Instagram Carousel Showcase">
+        </div>
+
+        <div class="hc-label reveal">
+          <p class="hc-label__eyebrow">Instagram Carousel Showcase</p>
+          <p class="hc-label__title">Mobile device / Carousel cards floating outside screen</p>
+        </div>
+        <div class="post-block reveal-left">
+          <img src="assets/healthcare/Health-order04.png" alt="MindSpace Community Engagement">
+        </div>
+
+        <div class="hc-label reveal">
+          <p class="hc-label__eyebrow">Community Engagement</p>
+          <p class="hc-label__title">Poll / Quote / Challenge / Mobile + tablet mockups</p>
+        </div>
+        <div class="post-block reveal-right">
+          <img src="assets/healthcare/Health-order05.png" alt="MindSpace Instagram Feed System">
+        </div>
+
+        <div class="hc-label reveal">
+          <p class="hc-label__eyebrow">Instagram Feed System</p>
+          <p class="hc-label__title">Large 3x3 grid / Lifestyle imagery</p>
+        </div>
+        <div class="post-block reveal-left">
+          <img src="assets/healthcare/Health-order06.png" alt="MindSpace Standalone Mockup Showcase">
+        </div>
+
+        <div class="hc-label reveal">
+          <p class="hc-label__eyebrow">Standalone Mockup Showcase</p>
+          <p class="hc-label__title">MindSpace Project Conclusion</p>
+        </div>
+        <div class="post-block reveal-right">
+          <img src="assets/healthcare/Health-order07.png" alt="MindSpace Campaign Finale">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="project" id="wealth-pilot-creations">
+    <div class="hc-brief">
+      <img src="assets/wealthpilot/Wealth-order1.png" alt="Wealth Pilot Campaign Vision and Brief">
+    </div>
+
+    <div class="project-column">
+      <div class="wp-label reveal">
+        <p class="wp-label__eyebrow">Campaign Vision</p>
+        <p class="wp-label__title">The Future of Wealth</p>
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/wealthpilot/Wealth-order2.png" alt="The Future of Wealth Framework">
+      </div>
+
+      <div class="wp-label reveal">
+        <p class="wp-label__eyebrow">Design Matrix</p>
+        <p class="wp-label__title">Campaign Adaptation System</p>
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/wealthpilot/Wealth-order3.png" alt="Campaign Adaptation System Grid">
+      </div>
+
+      <div class="wp-label reveal">
+        <p class="wp-label__eyebrow">Social Distribution</p>
+        <p class="wp-label__title">Carousel Campaign Series</p>
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/wealthpilot/Wealth-order4.png" alt="Carousel Campaign Layout Strategy">
+      </div>
+
+      <div class="wp-label reveal">
+        <p class="wp-label__eyebrow">Performance Marketing</p>
+        <p class="wp-label__title">Financial Awareness Ad Campaign</p>
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/wealthpilot/Wealth-order5.png" alt="Conversion Ad Creative Framework">
+      </div>
+
+      <div class="wp-label reveal">
+        <p class="wp-label__eyebrow">Campaign Overview</p>
+        <p class="wp-label__title">Campaign Showcase Grid</p>
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/wealthpilot/Wealth-order6.png" alt="Wealth Pilot Final Campaign Presentation Grid">
+      </div>
+    </div>
+  </section>
+
+  <section class="project" id="graphic-designs">
+    
+    <div id="graphic-designs-banner" style="width:100%;line-height:0;">
+      <img src="assets/global/Graphic-main Banner.png"
+           alt="Graphic Designs Creatives"
+           style="width:100%;height:auto;display:block;">
+    </div>
+
+    <div id="graphic-designs-brief" style="width:100%;line-height:0;">
+      <img src="assets/Graphic Design/Branding.png" 
+           alt="Branding Case Study" 
+           style="width:100%;height:auto;display:block;">
+    </div>
+    
+    <div class="project-column" style="padding-bottom: 60px;">
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Brnd-01.png" alt="Branding Image 01">
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/Graphic Design/Brnd-02.png" alt="Branding Image 02">
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Brnd-03.png" alt="Branding Image 03">
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/Graphic Design/Brnd-04.png" alt="Branding Image 04">
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Brnd-05.png" alt="Branding Image 05">
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/Graphic Design/Brnd-06.png" alt="Branding Image 06">
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Brnd-07.png" alt="Branding Image 07">
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/Graphic Design/Brnd-08.png" alt="Branding Image 08">
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Brnd-09.png" alt="Branding Image 09">
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/Graphic Design/Brnd-10.png" alt="Branding Image 10">
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Brnd-11.png" alt="Branding Image 11">
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/Graphic Design/Brnd-12.png" alt="Branding Image 12">
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Brnd-13.png" alt="Branding Image 13">
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/Graphic Design/Brnd-14.png" alt="Branding Image 14">
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Brnd-15.png" alt="Branding Image 15">
+      </div>
+    </div>
+
+    <div class="print-materials-deck-wrap">
+      <div class="pm-main-banner">
+        <img src="assets/global/Print-materials.png" alt="Print Materials Main Banner">
+      </div>
+    </div>
+
+    <div class="project-column" style="padding-top: 10px; padding-bottom: 60px;">
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Print Materials/P Mat-01.png" alt="Print Material 01">
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/Graphic Design/Print Materials/P Mat-02.png" alt="Print Material 02">
+      </div>
+      <div class="post-block reveal-left">
+        <img src="assets/Graphic Design/Print Materials/P Mat-03.png" alt="Print Material 03">
+      </div>
+      <div class="post-block reveal-right">
+        <img src="assets/Graphic Design/Print Materials/P Mat-04.png" alt="Print Material 04">
+      </div>
+    </div>
+
+    <div id="ai-film-banner" style="width:100%;line-height:0;">
+      <img src="assets/global/AI Film Experiments.png" alt="AI Film Experiments Main Banner">
+    </div>
+
+    <div class="project-column ai-cards-container">
+      <div class="ai-cards-grid">
+        
+        <!-- Link 1: BANNARI JEWELLERY AD -->
+        <a href="https://youtu.be/Y15wj6t24vU?si=U0Q_2CqqsWVoCyxQ" target="_blank" rel="noopener" class="ai-card reveal-left">
+          <div>
+            <p class="ai-card__tag">AI Commercial</p>
+            <h3 class="ai-card__title">Bannari Jewellery Ad</h3>
+            <p class="ai-card__desc">An advanced artificial intelligence promotional campaign exploring luxury jewelry aesthetics, photorealistic rendering engines, and high-fidelity lighting environments.</p>
+          </div>
+          <span class="ai-card__action">Watch Commercial →</span>
+        </a>
+
+        <!-- Link 2: JANANI -->
+        <a href="https://youtu.be/KpxZuFwhIKw" target="_blank" rel="noopener" class="ai-card reveal">
+          <div>
+            <p class="ai-card__tag">Tamil Short Film</p>
+            <h3 class="ai-card__title">Janani</h3>
+            <p class="ai-card__desc">A powerful Tamil narrative film blending regional structural concepts with cutting-edge visual treatments and creative direction layout parameters.</p>
+          </div>
+          <span class="ai-card__action">Watch Short Film →</span>
+        </a>
+
+        <!-- Link 3: THE SECRET LIFE OF SPECTACLE -->
+        <a href="https://youtu.be/zdtQn9yQpkA" target="_blank" rel="noopener" class="ai-card reveal-right">
+          <div>
+            <p class="ai-card__tag">English Short Film</p>
+            <h3 class="ai-card__title">The Secret Life of Spectacle</h3>
+            <p class="ai-card__desc">An experimental cinematic piece produced in English featuring anamorphic proportions, ambient tone-mapping frameworks, and highly detailed digital textures.</p>
+          </div>
+          <span class="ai-card__action">Watch Short Film →</span>
+        </a>
+
+        <!-- Link 4: Kanavai Thirudi Konda -->
+        <a href="https://youtu.be/Ln8J5jyzqfs" target="_blank" rel="noopener" class="ai-card reveal-left">
+          <div>
+            <p class="ai-card__tag">Tamil AI Song</p>
+            <h3 class="ai-card__title">Kanavai Thirudi Konda</h3>
+            <p class="ai-card__desc">An audio-reactive AI music video exploration setting traditional rhythms alongside generative surrealism and dynamic sequence pacing frameworks.</p>
+          </div>
+          <span class="ai-card__action">Listen &amp; Watch →</span>
+        </a>
+
+        <!-- Link 5: Maayalle -->
+        <a href="https://youtu.be/HKuETvtQRok" target="_blank" rel="noopener" class="ai-card reveal">
+          <div>
+            <p class="ai-card__tag">Malayalam AI Song</p>
+            <h3 class="ai-card__title">Maayalle</h3>
+            <p class="ai-card__desc">A deeply expressive Malayalam musical composition brought to life through hyper-stylized dreamscapes and progressive neural video interpolation systems.</p>
+          </div>
+          <span class="ai-card__action">Listen &amp; Watch →</span>
+        </a>
+
+        <!-- Link 6: Short stories -->
+        <a href="https://www.youtube.com/@mAruthI-Shorts" target="_blank" rel="noopener" class="ai-card reveal-right">
+          <div>
+            <p class="ai-card__tag">Short Stories Series</p>
+            <h3 class="ai-card__title">mAruthI Shorts Platform</h3>
+            <p class="ai-card__desc">A curated channel framework compiling rapid visual prototypes, micro-storytelling arcs, and swift digital layout testing mechanisms.</p>
+          </div>
+          <span class="ai-card__action">Explore Channel →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="portfolio-footer" id="portfolio-footer">
+  <div class="portfolio-footer__inner">
+    
+    <div class="footer-heading">
+      <h2>Let's Connect</h2>
+      <p>Open for project collaboration, creative direction roles, and freelance partnerships worldwide.</p>
+    </div>
+
+    <div class="footer-directory">
+      
+      <div class="footer-node">
+        <span class="footer-node__label">Mobile</span>
+        <a href="tel:+918825711089" class="footer-node__value">8825711089</a>
+      </div>
+
+      <div class="footer-node">
+        <span class="footer-node__label">Email</span>
+        <a href="mailto:sachithgkrishnan@gmail.com" class="footer-node__value">sachithgkrishnan@gmail.com</a>
+      </div>
+
+      <div class="footer-node">
+        <span class="footer-node__label">Instagram</span>
+        <a href="#" class="footer-node__value is-disabled">Coming Soon</a>
+      </div>
+
+      <div class="footer-node">
+        <span class="footer-node__label">LinkedIn</span>
+        <a href="#" class="footer-node__value is-disabled">Coming Soon</a>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var navWrapper = document.getElementById('nav-wrapper');
+  var nav        = document.getElementById('portfolioNav');
+  var navImg     = document.getElementById('portfolioNavImg');
+  var homeBtn    = document.getElementById('home-btn');
+  var contactBtn = document.getElementById('contact-floating-btn'); // Linked element node selector
+  var smcSec     = document.getElementById('social-media-creations');
+  var wpSec      = document.getElementById('wealth-pilot-creations');
+  var gdSec      = document.getElementById('graphic-designs');
+  var hitSMC     = document.getElementById('hit-smc');
+  var hitGD      = document.getElementById('hit-gd');
+
+  var CLOSED_SRC = 'assets/global/PortfolioMenu_Desktop.png';
+  var OPEN_SRC   = 'assets/global/PortfolioMenuOpen_Desktop.png';
+  var isSticky=false, navTop=0, wrapH=0, activeID=null, revealObs=null;
+
+  /* ── Nav sticky ── */
+  function cacheNavTop(){
+    nav.classList.remove('is-sticky');
+    navWrapper.style.height='';
+    navTop=navWrapper.getBoundingClientRect().top+window.pageYOffset;
+    wrapH=navWrapper.offsetHeight;
+    if(isSticky){
+      navWrapper.style.height=wrapH+'px';
+      nav.classList.add('is-sticky');
+    }
+  }
+  window.addEventListener('resize',cacheNavTop);
+  window.addEventListener('load',cacheNavTop);
+
+  function updateSticky(){
+    if(!navTop)cacheNavTop();
+    if(window.pageYOffset>=navTop){
+      if(!isSticky){
+        wrapH=navWrapper.offsetHeight;
+        navWrapper.style.height=wrapH+'px';
+        nav.classList.add('is-sticky');
+        isSticky=true;
+        if(contactBtn) contactBtn.classList.add('is-visible'); // Reveals floating phone icon ONLY during fixed sticky state activation
+      }
+    } else {
+      if(isSticky){
+        nav.classList.remove('is-sticky');
+        navWrapper.style.height='';
+        isSticky=false;
+        if(contactBtn) contactBtn.classList.remove('is-visible'); // Hides floating phone icon completely when scroll rolls above menu line
+      }
+    }
+  }
+  window.addEventListener('scroll',updateSticky,{passive:true});
+
+  /* ── IntersectionObserver (bi-directional) ── */
+  if('IntersectionObserver' in window){
+    revealObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){e.target.classList[e.isIntersecting?'add':'remove']('is-visible');});
+    },{root:null,rootMargin:'0px 0px -8% 0px',threshold:0.08});
+  }
+  function observeAll(sec){
+    var els=sec.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+    if(!revealObs){els.forEach(function(el){el.classList.add('is-visible');});return;}
+    els.forEach(function(el){revealObs.observe(el);});
+  }
+  function unobserveAll(sec){
+    sec.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){
+      if(revealObs)revealObs.unobserve(el);
+      el.classList.remove('is-visible');
+    });
+  }
+
+  /* ── Show / hide sections ── */
+  function showSection(id){
+    if(activeID&&activeID!==id){
+      var prev=document.getElementById(activeID);
+      if(prev){unobserveAll(prev);prev.classList.remove('is-active');}
+      
+      if(activeID==='social-media-creations' && wpSec){
+        unobserveAll(wpSec);wpSec.classList.remove('is-active');
+      }
+    }
+    activeID=id;
+    var sec=document.getElementById(id);
+    if(!sec)return;
+    sec.classList.add('is-active');
+    void sec.offsetHeight;
+    homeBtn.classList.add('is-visible');
+    observeAll(sec);
+
+    if(id==='social-media-creations' && wpSec){
+      wpSec.classList.add('is-active');
+      void wpSec.offsetHeight;
+      observeAll(wpSec);
+    }
+
+    setTimeout(function(){
+      var scrollTarget = sec;
+      if (id === 'social-media-creations') {
+        scrollTarget = document.getElementById('social-media-banner');
+      } else if (id === 'graphic-designs') {
+        scrollTarget = document.getElementById('graphic-designs-banner');
+      }
+      if(scrollTarget) scrollTarget.scrollIntoView({behavior:'smooth',block:'start'});
+    },16);
+  }
+  
+  function hideAll(){
+    [smcSec,wpSec,gdSec].forEach(function(s){if(!s)return;unobserveAll(s);s.classList.remove('is-active');});
+    activeID=null;
+  }
+
+  /* ── Menu ── */
+  function openMenu(){
+    navImg.src=OPEN_SRC;
+    navImg.setAttribute('aria-expanded','true');
+    navImg.alt='Portfolio menu open';
+    navWrapper.classList.add('menu-is-open');
+    requestAnimationFrame(function(){
+      var rect=navWrapper.getBoundingClientRect();
+      if(rect.bottom>window.innerHeight){
+        var st=window.pageYOffset+(rect.bottom-window.innerHeight)+16;
+        window.scrollTo({top:Math.min(st,rect.top+window.pageYOffset),behavior:'smooth'});
+      }
+    });
+  }
+  function closeMenu(){
+    navImg.src=CLOSED_SRC;
+    navImg.setAttribute('aria-expanded','false');
+    navImg.alt='Portfolio menu closed';
+    navWrapper.classList.remove('menu-is-open');
+  }
+  function toggleMenu(){navImg.getAttribute('aria-expanded')==='true'?closeMenu():openMenu();}
+
+  navImg.addEventListener('click',toggleMenu);
+  navImg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleMenu();}});
+
+  function handleHit(id){closeMenu();showSection(id);}
+  ['click','touchend'].forEach(function(t){
+    hitSMC.addEventListener(t,function(e){e.preventDefault();e.stopPropagation();handleHit('social-media-creations');},{passive:false});
+    hitGD.addEventListener(t,function(e){e.preventDefault();e.stopPropagation();handleHit('graphic-designs');},{passive:false});
+  });
+  hitSMC.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();handleHit('social-media-creations');}});
+  hitGD.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();handleHit('graphic-designs');}});
+
+  /* ── Home reset ── */
+  homeBtn.addEventListener('click',function(e){
+    e.preventDefault();closeMenu();hideAll();
+    homeBtn.classList.remove('is-visible');
+    if(contactBtn) contactBtn.classList.remove('is-visible'); // Synchronized fallback reset to clear phone icon on home view returns
+    document.getElementById('home-hero').scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){nav.classList.remove('is-sticky');navWrapper.style.height='';isSticky=false;navTop=0;},300);
+  });
+
+  /* ── Contact anchor scroll engine ── */
+  if(contactBtn){
+    contactBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      var footerTarget = document.getElementById('portfolio-footer');
+      if(footerTarget) footerTarget.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  }
+
+  /* ── Video play engine ── */
+  var playBtn    = document.getElementById('videoPlayBtn');
+  var promoVid   = document.getElementById('promoVideo');
+  var vidScreen  = document.getElementById('videoScreen');
+  var ctrlTimer  = null;
+  var isPlaying  = false;
+
+  function showControls(){
+    if(!isPlaying)return;
+    promoVid.setAttribute('controls','');
+  }
+  function hideControls(){
+    promoVid.removeAttribute('controls');
+  }
+  function scheduleHide(){
+    clearTimeout(ctrlTimer);
+    ctrlTimer=setTimeout(hideControls,2200);
+  }
+
+  if(playBtn&&promoVid){
+    playBtn.addEventListener('click',function(){
+      playBtn.classList.add('is-hidden');
+      promoVid.muted=false;
+      promoVid.play().catch(function(){
+        promoVid.muted=true;
+        promoVid.play();
+      });
+      isPlaying=true;
+    });
+
+    vidScreen.addEventListener('mouseenter',function(){showControls();clearTimeout(ctrlTimer);});
+    vidScreen.addEventListener('mouseleave',function(){scheduleHide();});
+    vidScreen.addEventListener('mousemove',function(){showControls();scheduleHide();});
+    vidScreen.addEventListener('touchstart',function(e){
+      if(!isPlaying)return;
+      promoVid.hasAttribute('controls')?hideControls():(showControls(),scheduleHide());
+    },{passive:true});
+
+    promoVid.addEventListener('ended',function(){
+      isPlaying=false;
+      hideControls();
+      playBtn.classList.remove('is-hidden');
+    });
+  }
+
+})();
+</script>
+
+</body>
+</html>
