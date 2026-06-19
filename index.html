@@ -110,10 +110,19 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
 .post-block--80{width:80%;margin:0 auto;padding-bottom:48px;}
 .post-block--80 img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 6px 28px rgba(0,0,0,.09);}
 
-/* CUSTOM SPACING OVERRIDE: Reduced to 35% of 90px (32px) for a crisp layout fit */
+/* ==================================================================
+   CRISP DESIGN ALIGNMENT: Tighten gaps across all campaign sections
+   ================================================================== */
 #social-media-creations .post-block,
-#social-media-creations .post-block--80 {
-  padding-bottom: 32px;
+#social-media-creations .post-block--80,
+#wealth-pilot-creations .post-block,
+#wealth-pilot-creations .post-block--80 {
+  padding-bottom: 12px; /* Pulls next content up close uniformly */
+}
+#social-media-creations .section-label,
+.hc-label,
+.wp-label {
+  padding: 15px 0 6px; /* Minimizes the label text cushion padding globally */
 }
 
 /* Custom spacing override for graphic design section items */
@@ -200,11 +209,9 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
 }
 
 /* White labels for healthcare section readability */
-.hc-label {padding:60px 0 20px;}
-.hc-label__eyebrow {
+.hc-label {
   font-size:9px;font-weight:700;letter-spacing:.28em;
-  text-transform:uppercase;margin-bottom:7px;
-  color:rgba(255, 255, 255, 0.7);
+  text-transform:uppercase;color:rgba(255, 255, 255, 0.7);
 }
 .hc-label__title {
   font-size:clamp(11px,1.1vw,14px);font-weight:800;
@@ -215,11 +222,9 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
 /* ====================================
    WEALTH PILOT SEPARATE CONTAINER ENGINE
 ==================================== */
-.wp-label {padding:60px 0 20px;}
-.wp-label__eyebrow {
+.wp-label {
   font-size:9px;font-weight:700;letter-spacing:.28em;
-  text-transform:uppercase;margin-bottom:7px;
-  color:rgba(255, 255, 255, 0.7);
+  text-transform:uppercase;color:rgba(255, 255, 255, 0.7);
 }
 .wp-label__title {
   font-size:clamp(11px,1.1vw,14px);font-weight:800;
@@ -733,7 +738,6 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
     <div class="project-column ai-cards-container">
       <div class="ai-cards-grid">
         
-        <!-- Link 1: BANNARI JEWELLERY AD -->
         <a href="https://youtu.be/Y15wj6t24vU?si=U0Q_2CqqsWVoCyxQ" target="_blank" rel="noopener" class="ai-card reveal-left">
           <div>
             <p class="ai-card__tag">AI Commercial</p>
@@ -743,7 +747,6 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <span class="ai-card__action">Watch Commercial →</span>
         </a>
 
-        <!-- Link 2: JANANI -->
         <a href="https://youtu.be/KpxZuFwhIKw" target="_blank" rel="noopener" class="ai-card reveal">
           <div>
             <p class="ai-card__tag">Tamil Short Film</p>
@@ -753,7 +756,6 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <span class="ai-card__action">Watch Short Film →</span>
         </a>
 
-        <!-- Link 3: THE SECRET LIFE OF SPECTACLE -->
         <a href="https://youtu.be/zdtQn9yQpkA" target="_blank" rel="noopener" class="ai-card reveal-right">
           <div>
             <p class="ai-card__tag">English Short Film</p>
@@ -763,7 +765,6 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <span class="ai-card__action">Watch Short Film →</span>
         </a>
 
-        <!-- Link 4: Kanavai Thirudi Konda -->
         <a href="https://youtu.be/Ln8J5jyzqfs" target="_blank" rel="noopener" class="ai-card reveal-left">
           <div>
             <p class="ai-card__tag">Tamil AI Song</p>
@@ -773,7 +774,6 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <span class="ai-card__action">Listen &amp; Watch →</span>
         </a>
 
-        <!-- Link 5: Maayalle -->
         <a href="https://youtu.be/HKuETvtQRok" target="_blank" rel="noopener" class="ai-card reveal">
           <div>
             <p class="ai-card__tag">Malayalam AI Song</p>
@@ -783,7 +783,6 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <span class="ai-card__action">Listen &amp; Watch →</span>
         </a>
 
-        <!-- Link 6: Short stories -->
         <a href="https://www.youtube.com/@mAruthI-Shorts" target="_blank" rel="noopener" class="ai-card reveal-right">
           <div>
             <p class="ai-card__tag">Short Stories Series</p>
