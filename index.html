@@ -80,7 +80,6 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
 .brief-tagline{font-family:"Courier New",monospace;font-size:9px;font-weight:700;color:#555555;text-transform:uppercase;letter-spacing:.2em;margin-bottom:10px;}
 .brief-body{max-width:900px;color:#888888;font-size:11.5px;line-height:1.45;letter-spacing:.015em;margin-bottom:12px;}
 .brief-row{display:grid;grid-template-columns:200px 1fr;gap:12px;padding:5px 0;border-top:1px solid rgba(255,255,255,.07);align-items:baseline;}
-.brief-row:last-child{border-bottom:1px solid rgba(255,255,255,.07);}
 .brief-row__label{font-family:"Courier New",monospace;font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#ffffff;white-space:nowrap;}
 .brief-row__value{font-size:11.5px;line-height:1.45;letter-spacing:.015em;color:#888888;font-weight:400;}
 
@@ -111,7 +110,13 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
 .post-block--80{width:80%;margin:0 auto;padding-bottom:48px;}
 .post-block--80 img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 6px 28px rgba(0,0,0,.09);}
 
-/* Custom spacing override for graphic design section items */
+/* CUSTOM SPACING OVERRIDE: Exactly 90px space between items in the social media section */
+#social-media-creations .post-block,
+#social-media-creations .post-block--80 {
+  padding-bottom: 90px;
+}
+
+/* Custom spacing override for graphic design section items (Left completely untouched) */
 #graphic-designs .post-block {padding-bottom:10px;}
 
 /* VIDEO ENGINE */
@@ -467,7 +472,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="section-label__eyebrow">Campaign Thinking</p>
         </div>
         <div class="post-block reveal-left">
-          <img src="assets/furniture/Campaign Thinking.png" alt="Campaign Thinking">
+          <img src="assets/furniture/Campaign Thinking.png" alt="Campaign Thinking" loading="lazy">
         </div>
 
         <div class="section-label reveal">
@@ -475,10 +480,10 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="section-label__title">Option 1 &amp; Option 2</p>
         </div>
         <div class="post-block reveal-left">
-          <img src="assets/furniture/Furni_post01.png" alt="Naomi Home Hero Banner Option 1">
+          <img src="assets/furniture/Furni_post01.png" alt="Naomi Home Hero Banner Option 1" loading="lazy">
         </div>
         <div class="post-block reveal-right">
-          <img src="assets/furniture/Furni_post02.png" alt="Naomi Home Hero Banner Option 2">
+          <img src="assets/furniture/Furni_post02.png" alt="Naomi Home Hero Banner Option 2" loading="lazy">
         </div>
 
         <div class="section-label reveal">
@@ -486,7 +491,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="section-label__title">Concept Visual For Campaign Framework</p>
         </div>
         <div class="post-block reveal-left">
-          <img src="assets/furniture/Furni_post03.png" alt="Campaign Mood Board">
+          <img src="assets/furniture/Furni_post03.png" alt="Campaign Mood Board" loading="lazy">
         </div>
 
         <div class="section-label reveal">
@@ -494,7 +499,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="section-label__title">Product Flexibility · Comfort · Lifestyle</p>
         </div>
         <div class="post-block reveal-right">
-          <img src="assets/furniture/Furni_post04.png" alt="Instagram Carousel">
+          <img src="assets/furniture/Furni_post04.png" alt="Instagram Carousel" loading="lazy">
         </div>
 
         <div class="section-label reveal">
@@ -503,10 +508,10 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="section-label__subtitle">Focused On Engagement &amp; Clicks</p>
         </div>
         <div class="post-block--80 reveal-left">
-          <img src="assets/furniture/Furni_post05.png" alt="Facebook Ad Creative">
+          <img src="assets/furniture/Furni_post05.png" alt="Facebook Ad Creative" loading="lazy">
         </div>
         <div class="post-block reveal-right">
-          <img src="assets/furniture/Furni_post06.png" alt="Instagram Ad Creative">
+          <img src="assets/furniture/Furni_post06.png" alt="Instagram Ad Creative" loading="lazy">
         </div>
 
         <div class="section-label reveal">
@@ -516,7 +521,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
 
         <div class="post-block--80 reveal-left">
           <div class="video-post-wrap" id="videoPostWrap">
-            <img class="post-bg" src="assets/furniture/Furni_post07.png" alt="Promotional Video Post Mockup">
+            <img class="post-bg" src="assets/furniture/Furni_post07.png" alt="Promotional Video Post Mockup" loading="lazy">
             <div class="video-screen-clip" id="videoScreen">
               <video id="promoVideo" playsinline preload="metadata" muted>
                 <source src="assets/furniture/Furni_video.mp4" type="video/mp4">
@@ -534,7 +539,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
     <div class="healthcare-deck-wrap">
       
       <div class="hc-brief">
-        <img src="assets/healthcare/Health-order01.png" alt="MindSpace Campaign Vision and Brief">
+        <img src="assets/healthcare/Health-order01.png" alt="MindSpace Campaign Vision and Brief" loading="lazy">
       </div>
 
       <div class="project-column">
@@ -543,7 +548,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="hc-label__title">Hand holding tablet / Campaign manifesto / Premium spacing</p>
         </div>
         <div class="post-block reveal-left">
-          <img src="assets/healthcare/Health-order02.png" alt="MindSpace Awareness Creative Series">
+          <img src="assets/healthcare/Health-order02.png" alt="MindSpace Awareness Creative Series" loading="lazy">
         </div>
 
         <div class="hc-label reveal">
@@ -551,7 +556,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="hc-label__title">3 floating Instagram post mockups / Dynamic composition</p>
         </div>
         <div class="post-block reveal-right">
-          <img src="assets/healthcare/Health-order03.png" alt="MindSpace Instagram Carousel Showcase">
+          <img src="assets/healthcare/Health-order03.png" alt="MindSpace Instagram Carousel Showcase" loading="lazy">
         </div>
 
         <div class="hc-label reveal">
@@ -559,7 +564,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="hc-label__title">Mobile device / Carousel cards floating outside screen</p>
         </div>
         <div class="post-block reveal-left">
-          <img src="assets/healthcare/Health-order04.png" alt="MindSpace Community Engagement">
+          <img src="assets/healthcare/Health-order04.png" alt="MindSpace Community Engagement" loading="lazy">
         </div>
 
         <div class="hc-label reveal">
@@ -567,7 +572,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="hc-label__title">Poll / Quote / Challenge / Mobile + tablet mockups</p>
         </div>
         <div class="post-block reveal-right">
-          <img src="assets/healthcare/Health-order05.png" alt="MindSpace Instagram Feed System">
+          <img src="assets/healthcare/Health-order05.png" alt="MindSpace Instagram Feed System" loading="lazy">
         </div>
 
         <div class="hc-label reveal">
@@ -575,7 +580,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="hc-label__title">Large 3x3 grid / Lifestyle imagery</p>
         </div>
         <div class="post-block reveal-left">
-          <img src="assets/healthcare/Health-order06.png" alt="MindSpace Standalone Mockup Showcase">
+          <img src="assets/healthcare/Health-order06.png" alt="MindSpace Standalone Mockup Showcase" loading="lazy">
         </div>
 
         <div class="hc-label reveal">
@@ -583,7 +588,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
           <p class="hc-label__title">MindSpace Project Conclusion</p>
         </div>
         <div class="post-block reveal-right">
-          <img src="assets/healthcare/Health-order07.png" alt="MindSpace Campaign Finale">
+          <img src="assets/healthcare/Health-order07.png" alt="MindSpace Campaign Finale" loading="lazy">
         </div>
       </div>
 
@@ -592,7 +597,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
 
   <section class="project" id="wealth-pilot-creations">
     <div class="hc-brief">
-      <img src="assets/wealthpilot/Wealth-order1.png" alt="Wealth Pilot Campaign Vision and Brief">
+      <img src="assets/wealthpilot/Wealth-order1.png" alt="Wealth Pilot Campaign Vision and Brief" loading="lazy">
     </div>
 
     <div class="project-column">
@@ -601,7 +606,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
         <p class="wp-label__title">The Future of Wealth</p>
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/wealthpilot/Wealth-order2.png" alt="The Future of Wealth Framework">
+        <img src="assets/wealthpilot/Wealth-order2.png" alt="The Future of Wealth Framework" loading="lazy">
       </div>
 
       <div class="wp-label reveal">
@@ -609,7 +614,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
         <p class="wp-label__title">Campaign Adaptation System</p>
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/wealthpilot/Wealth-order3.png" alt="Campaign Adaptation System Grid">
+        <img src="assets/wealthpilot/Wealth-order3.png" alt="Campaign Adaptation System Grid" loading="lazy">
       </div>
 
       <div class="wp-label reveal">
@@ -617,7 +622,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
         <p class="wp-label__title">Carousel Campaign Series</p>
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/wealthpilot/Wealth-order4.png" alt="Carousel Campaign Layout Strategy">
+        <img src="assets/wealthpilot/Wealth-order4.png" alt="Carousel Campaign Layout Strategy" loading="lazy">
       </div>
 
       <div class="wp-label reveal">
@@ -625,7 +630,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
         <p class="wp-label__title">Financial Awareness Ad Campaign</p>
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/wealthpilot/Wealth-order5.png" alt="Conversion Ad Creative Framework">
+        <img src="assets/wealthpilot/Wealth-order5.png" alt="Conversion Ad Creative Framework" loading="lazy">
       </div>
 
       <div class="wp-label reveal">
@@ -633,7 +638,7 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
         <p class="wp-label__title">Campaign Showcase Grid</p>
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/wealthpilot/Wealth-order6.png" alt="Wealth Pilot Final Campaign Presentation Grid">
+        <img src="assets/wealthpilot/Wealth-order6.png" alt="Wealth Pilot Final Campaign Presentation Grid" loading="lazy">
       </div>
     </div>
   </section>
@@ -649,81 +654,80 @@ img{border:0;outline:0;vertical-align:top;display:block;max-width:100%;}
     <div id="graphic-designs-brief" style="width:100%;line-height:0;">
       <img src="assets/graphic Design/Branding.png" 
            alt="Branding Case Study" 
-           style="width:100%;height:auto;display:block;">
+           style="width:100%;height:auto;display:block;" loading="lazy">
     </div>
     
     <div class="project-column" style="padding-bottom: 60px;">
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Brnd-01.png" alt="Branding Image 01">
+        <img src="assets/graphic Design/Brnd-01.png" alt="Branding Image 01" loading="lazy">
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/graphic Design/Brnd-02.png" alt="Branding Image 02">
+        <img src="assets/graphic Design/Brnd-02.png" alt="Branding Image 02" loading="lazy">
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Brnd-03.png" alt="Branding Image 03">
+        <img src="assets/graphic Design/Brnd-03.png" alt="Branding Image 03" loading="lazy">
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/graphic Design/Brnd-04.png" alt="Branding Image 04">
+        <img src="assets/graphic Design/Brnd-04.png" alt="Branding Image 04" loading="lazy">
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Brnd-05.png" alt="Branding Image 05">
+        <img src="assets/graphic Design/Brnd-05.png" alt="Branding Image 05" loading="lazy">
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/graphic Design/Brnd-06.png" alt="Branding Image 06">
+        <img src="assets/graphic Design/Brnd-06.png" alt="Branding Image 06" loading="lazy">
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Brnd-07.png" alt="Branding Image 07">
+        <img src="assets/graphic Design/Brnd-07.png" alt="Branding Image 07" loading="lazy">
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/graphic Design/Brnd-08.png" alt="Branding Image 08">
+        <img src="assets/graphic Design/Brnd-08.png" alt="Branding Image 08" loading="lazy">
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Brnd-09.png" alt="Branding Image 09">
+        <img src="assets/graphic Design/Brnd-09.png" alt="Branding Image 09" loading="lazy">
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/graphic Design/Brnd-10.png" alt="Branding Image 10">
+        <img src="assets/graphic Design/Brnd-10.png" alt="Branding Image 10" loading="lazy">
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Brnd-11.png" alt="Branding Image 11">
+        <img src="assets/graphic Design/Brnd-11.png" alt="Branding Image 11" loading="lazy">
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/graphic Design/Brnd-12.png" alt="Branding Image 12">
+        <img src="assets/graphic Design/Brnd-12.png" alt="Branding Image 12" loading="lazy">
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Brnd-13.png" alt="Branding Image 13">
+        <img src="assets/graphic Design/Brnd-13.png" alt="Branding Image 13" loading="lazy">
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/graphic Design/Brnd-14.png" alt="Branding Image 14">
+        <img src="assets/graphic Design/Brnd-14.png" alt="Branding Image 14" loading="lazy">
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Brnd-15.png" alt="Branding Image 15">
+        <img src="assets/graphic Design/Brnd-15.png" alt="Branding Image 15" loading="lazy">
       </div>
     </div>
 
     <div class="print-materials-deck-wrap">
       <div class="pm-main-banner">
-        <img src="assets/global/Print-materials.png" alt="Print Materials Main Banner">
+        <img src="assets/global/Print-materials.png" alt="Print Materials Main Banner" loading="lazy">
       </div>
     </div>
 
     <div class="project-column" style="padding-top: 10px; padding-bottom: 60px;">
-      <!-- FIXED PATHS: Mapped to perfectly match 'Print Materials' as verified live on GitHub -->
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Print Materials/P Mat-01.png" alt="Print Material 01">
+        <img src="assets/graphic Design/Print Materials/P Mat-01.png" alt="Print Material 01" loading="lazy">
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/graphic Design/Print Materials/P Mat-02.png" alt="Print Material 02">
+        <img src="assets/graphic Design/Print Materials/P Mat-02.png" alt="Print Material 02" loading="lazy">
       </div>
       <div class="post-block reveal-left">
-        <img src="assets/graphic Design/Print Materials/P Mat-03.png" alt="Print Material 03">
+        <img src="assets/graphic Design/Print Materials/P Mat-03.png" alt="Print Material 03" loading="lazy">
       </div>
       <div class="post-block reveal-right">
-        <img src="assets/graphic Design/Print Materials/P Mat-04.png" alt="Print Material 04">
+        <img src="assets/graphic Design/Print Materials/P Mat-04.png" alt="Print Material 04" loading="lazy">
       </div>
     </div>
 
     <div id="ai-film-banner" style="width:100%;line-height:0;">
-      <img src="assets/global/AI Film Experiments.png" alt="AI Film Experiments Main Banner">
+      <img src="assets/global/AI Film Experiments.png" alt="AI Film Experiments Main Banner" loading="lazy">
     </div>
 
     <div class="project-column ai-cards-container">
